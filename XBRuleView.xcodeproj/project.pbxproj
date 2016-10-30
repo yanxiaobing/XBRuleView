@@ -15,6 +15,8 @@
 		E6D362351DC647BF00C38756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D362331DC647BF00C38756 /* LaunchScreen.storyboard */; };
 		E6D362401DC647BF00C38756 /* XBRuleViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D3623F1DC647BF00C38756 /* XBRuleViewTests.m */; };
 		E6D3624B1DC647BF00C38756 /* XBRuleViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D3624A1DC647BF00C38756 /* XBRuleViewUITests.m */; };
+		E6D3625A1DC6499F00C38756 /* XBRuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D362591DC6499F00C38756 /* XBRuleView.m */; };
+		E6D3625D1DC649C300C38756 /* XBRuleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D3625C1DC649C300C38756 /* XBRuleContentView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		E6D362461DC647BF00C38756 /* XBRuleViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XBRuleViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D3624A1DC647BF00C38756 /* XBRuleViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBRuleViewUITests.m; sourceTree = "<group>"; };
 		E6D3624C1DC647BF00C38756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6D362581DC6499F00C38756 /* XBRuleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBRuleView.h; sourceTree = "<group>"; };
+		E6D362591DC6499F00C38756 /* XBRuleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBRuleView.m; sourceTree = "<group>"; };
+		E6D3625B1DC649C300C38756 /* XBRuleContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBRuleContentView.h; sourceTree = "<group>"; };
+		E6D3625C1DC649C300C38756 /* XBRuleContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBRuleContentView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,10 @@
 			children = (
 				E6D362281DC647BF00C38756 /* AppDelegate.h */,
 				E6D362291DC647BF00C38756 /* AppDelegate.m */,
+				E6D362581DC6499F00C38756 /* XBRuleView.h */,
+				E6D362591DC6499F00C38756 /* XBRuleView.m */,
+				E6D3625B1DC649C300C38756 /* XBRuleContentView.h */,
+				E6D3625C1DC649C300C38756 /* XBRuleContentView.m */,
 				E6D3622B1DC647BF00C38756 /* ViewController.h */,
 				E6D3622C1DC647BF00C38756 /* ViewController.m */,
 				E6D3622E1DC647BF00C38756 /* Main.storyboard */,
@@ -207,6 +217,7 @@
 				TargetAttributes = {
 					E6D362211DC647BF00C38756 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = VKU2TSZ7H9;
 						ProvisioningStyle = Automatic;
 					};
 					E6D3623A1DC647BF00C38756 = {
@@ -273,7 +284,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D3625A1DC6499F00C38756 /* XBRuleView.m in Sources */,
 				E6D3622D1DC647BF00C38756 /* ViewController.m in Sources */,
+				E6D3625D1DC649C300C38756 /* XBRuleContentView.m in Sources */,
 				E6D3622A1DC647BF00C38756 /* AppDelegate.m in Sources */,
 				E6D362271DC647BF00C38756 /* main.m in Sources */,
 			);
@@ -422,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VKU2TSZ7H9;
 				INFOPLIST_FILE = XBRuleView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shaoxiandui.XBRuleView;
@@ -433,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VKU2TSZ7H9;
 				INFOPLIST_FILE = XBRuleView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shaoxiandui.XBRuleView;
@@ -505,6 +520,7 @@
 				E6D362511DC647BF00C38756 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6D362521DC647BF00C38756 /* Build configuration list for PBXNativeTarget "XBRuleViewTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +529,7 @@
 				E6D362541DC647BF00C38756 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6D362551DC647BF00C38756 /* Build configuration list for PBXNativeTarget "XBRuleViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +538,7 @@
 				E6D362571DC647BF00C38756 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
