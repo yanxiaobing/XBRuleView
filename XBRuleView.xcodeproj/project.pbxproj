@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6AF41C71DC8FBC400EE38EB /* XBSwiftRuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF41C61DC8FBC400EE38EB /* XBSwiftRuleView.swift */; };
 		E6D362271DC647BF00C38756 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D362261DC647BF00C38756 /* main.m */; };
 		E6D3622A1DC647BF00C38756 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D362291DC647BF00C38756 /* AppDelegate.m */; };
 		E6D3622D1DC647BF00C38756 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D3622C1DC647BF00C38756 /* ViewController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E6AF41C51DC8FBC300EE38EB /* XBRuleView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XBRuleView-Bridging-Header.h"; sourceTree = "<group>"; };
+		E6AF41C61DC8FBC400EE38EB /* XBSwiftRuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XBSwiftRuleView.swift; sourceTree = "<group>"; };
 		E6D362221DC647BF00C38756 /* XBRuleView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XBRuleView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D362261DC647BF00C38756 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6D362281DC647BF00C38756 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,6 +87,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6AF41C31DC8FB4100EE38EB /* OCRuleView */ = {
+			isa = PBXGroup;
+			children = (
+				E6D362581DC6499F00C38756 /* XBRuleView.h */,
+				E6D362591DC6499F00C38756 /* XBRuleView.m */,
+				E6D3625B1DC649C300C38756 /* XBRuleContentView.h */,
+				E6D3625C1DC649C300C38756 /* XBRuleContentView.m */,
+			);
+			name = OCRuleView;
+			sourceTree = "<group>";
+		};
+		E6AF41C41DC8FB7A00EE38EB /* SwiftRuleView */ = {
+			isa = PBXGroup;
+			children = (
+				E6AF41C61DC8FBC400EE38EB /* XBSwiftRuleView.swift */,
+				E6AF41C51DC8FBC300EE38EB /* XBRuleView-Bridging-Header.h */,
+			);
+			name = SwiftRuleView;
+			sourceTree = "<group>";
+		};
 		E6D362191DC647BF00C38756 = {
 			isa = PBXGroup;
 			children = (
@@ -109,10 +132,8 @@
 			children = (
 				E6D362281DC647BF00C38756 /* AppDelegate.h */,
 				E6D362291DC647BF00C38756 /* AppDelegate.m */,
-				E6D362581DC6499F00C38756 /* XBRuleView.h */,
-				E6D362591DC6499F00C38756 /* XBRuleView.m */,
-				E6D3625B1DC649C300C38756 /* XBRuleContentView.h */,
-				E6D3625C1DC649C300C38756 /* XBRuleContentView.m */,
+				E6AF41C41DC8FB7A00EE38EB /* SwiftRuleView */,
+				E6AF41C31DC8FB4100EE38EB /* OCRuleView */,
 				E6D3622B1DC647BF00C38756 /* ViewController.h */,
 				E6D3622C1DC647BF00C38756 /* ViewController.m */,
 				E6D3622E1DC647BF00C38756 /* Main.storyboard */,
@@ -218,6 +239,7 @@
 					E6D362211DC647BF00C38756 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = VKU2TSZ7H9;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					E6D3623A1DC647BF00C38756 = {
@@ -288,6 +310,7 @@
 				E6D3622D1DC647BF00C38756 /* ViewController.m in Sources */,
 				E6D3625D1DC649C300C38756 /* XBRuleContentView.m in Sources */,
 				E6D3622A1DC647BF00C38756 /* AppDelegate.m in Sources */,
+				E6AF41C71DC8FBC400EE38EB /* XBSwiftRuleView.swift in Sources */,
 				E6D362271DC647BF00C38756 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,11 +458,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = VKU2TSZ7H9;
 				INFOPLIST_FILE = XBRuleView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shaoxiandui.XBRuleView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "XBRuleView/XBRuleView-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -447,17 +475,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = VKU2TSZ7H9;
 				INFOPLIST_FILE = XBRuleView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shaoxiandui.XBRuleView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "XBRuleView/XBRuleView-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		E6D362531DC647BF00C38756 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = XBRuleViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -470,6 +503,7 @@
 		E6D362541DC647BF00C38756 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = XBRuleViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -482,6 +516,7 @@
 		E6D362561DC647BF00C38756 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = XBRuleViewUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shaoxiandui.XBRuleViewUITests;
@@ -493,6 +528,7 @@
 		E6D362571DC647BF00C38756 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = XBRuleViewUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shaoxiandui.XBRuleViewUITests;

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "XBRuleView.h"
+#import "XBRuleView-Swift.h"
 
 @interface ViewController ()<UIScrollViewDelegate>
 {
@@ -62,9 +63,11 @@
     view2.center = ruleView2.center;
     [self.view addSubview:view2];
     
-    
-    
-    
+    /*
+    XBSwiftRuleView *xbRuleView = [[XBSwiftRuleView alloc]initWithFrame:CGRectMake(50, 300, [UIScreen mainScreen].bounds.size.width - 100, 70)];
+    xbRuleView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:xbRuleView];
+     */
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
