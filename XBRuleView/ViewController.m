@@ -64,7 +64,7 @@
     [self.view addSubview:view2];
     
     
-    SwiftTestView *xbRuleView = [[SwiftTestView alloc]initWithFrame:CGRectMake(50, 300, [UIScreen mainScreen].bounds.size.width - 100, 70)];
+    SwiftTestView *xbRuleView = [[SwiftTestView alloc]initWithFrame:CGRectMake(50, 580, [UIScreen mainScreen].bounds.size.width - 100, 70)];
     xbRuleView.backgroundColor = [UIColor redColor];
     [self.view addSubview:xbRuleView];
     

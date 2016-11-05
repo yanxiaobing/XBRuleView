@@ -129,6 +129,7 @@
             NSString *text = [NSString stringWithFormat:@"%.0f",_minValue + i * _minScale];
             CGSize textSize = [self textSizeWithFont:self.textFont text:text];
             NSDictionary *attributes = @{NSFontAttributeName:_textFont, NSForegroundColorAttributeName: _textColor};
+            
             [text drawInRect:CGRectMake(scaleFrame.origin.x - textSize.width/2.0, rect.size.height - textSize.height, textSize.width, textSize.height) withAttributes:attributes];
             
         }else if(i % 5 == 0){
