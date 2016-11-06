@@ -77,15 +77,6 @@
     self.testlabel.text = [NSString stringWithFormat:@"%.0f",ruleView2.currentValue];
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    
-    self.yearLabel.text = [NSString stringWithFormat:@"%.1f",ruleView.currentValue];
-    
-    self.testlabel.text = [NSString stringWithFormat:@"%.0f",ruleView2.currentValue];
-    
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

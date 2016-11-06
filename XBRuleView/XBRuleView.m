@@ -112,27 +112,12 @@
 
 #pragma mark --delegate
 
-- (id)forwardingTargetForSelector:(SEL)aSelector
-{
-    if ([self.delegate respondsToSelector:aSelector])
-        
-        return self.delegate;
-    
-    return [super forwardingTargetForSelector:aSelector];
-}
-
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView
                      withVelocity:(CGPoint)velocity
               targetContentOffset:(inout CGPoint *)targetContentOffset {
     
     *targetContentOffset = [self scrollToOffset:(*targetContentOffset)];
-    
-    if ([self.delegate respondsToSelector:
-         @selector(scrollViewWillEndDragging:withVelocity:targetContentOffset:)])
-        
-        [self.delegate scrollViewWillEndDragging:scrollView
-                                    withVelocity:velocity
-                             targetContentOffset:targetContentOffset];
+
 }
 
 - (CGPoint)scrollToOffset:(CGPoint)starting {

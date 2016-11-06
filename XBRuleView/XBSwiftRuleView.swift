@@ -9,11 +9,15 @@
 import UIKit
 
 enum XBSwiftRuleType {
-    case Horizontal
-    case Vertical
+    case horizontal
+    case vertical
 }
 
-class SwiftTestView: UIView {
+class SwiftTestView: UIView,UIScrollViewDelegate {
+    
+    var ruleVew : XBSwiftRuleView?
+    var label : UILabel?
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,11 +30,29 @@ class SwiftTestView: UIView {
     
     func setUpSubView() {
         
-        let ruleVew = XBSwiftRuleView.init(frame: self.bounds,ruleType: XBSwiftRuleType.Horizontal)
-        ruleVew.setRange(from: 20, to: 200, minScale: 1, minScaleWidth: 5)
-        ruleVew.currentValue = 100
+        ruleVew = XBSwiftRuleView.init(frame: self.bounds,ruleType: XBSwiftRuleType.horizontal)
+        ruleVew?.setRange(from: 20, to: 200, minScale: 1, minScaleWidth: 10)
+        ruleVew?.delegate = self
         
-        self.addSubview(ruleVew)
+        ruleVew?.currentValue = 100
+        self.addSubview(ruleVew!)
+        
+        let view = UIView.init(frame: CGRect(x:0,y:0,width:1,height:self.bounds.size.height))
+        view.backgroundColor = UIColor.black
+        view.center = CGPoint(x:self.bounds.size.width/2.0,y:self.bounds.size.height/2.0)
+        self.addSubview(view)
+        
+        
+        label = UILabel.init(frame:CGRect(x:0,y:0,width:100,height:20))
+        label?.center = CGPoint(x:self.bounds.size.width/2.0,y:self.bounds.size.height/2.0)
+        label?.textColor = UIColor.red
+        label?.textAlignment = NSTextAlignment.center
+        self.addSubview(label!)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(NSString(format:"%0.0f",(ruleVew?.currentValue)!))
+        label?.text = NSString(format:"%0.0f",(ruleVew?.currentValue)!) as String
     }
 }
 
@@ -45,7 +67,7 @@ class XBSwiftRuleView: UIView ,UIScrollViewDelegate {
     var  textColor: UIColor = UIColor.red
     var textFont : UIFont = UIFont.systemFont(ofSize: 10)
     
-    var ruleType : XBSwiftRuleType = XBSwiftRuleType.Horizontal
+    var ruleType : XBSwiftRuleType = XBSwiftRuleType.horizontal
     var minValue : NSInteger = 20
     var maxValue : NSInteger = 200
     var minScale : CGFloat = 1
@@ -66,7 +88,7 @@ class XBSwiftRuleView: UIView ,UIScrollViewDelegate {
                 value = newValue;
             }
             
-            if (ruleType == XBSwiftRuleType.Vertical) {
+            if (ruleType == XBSwiftRuleType.vertical) {
                 var offset = scrollview?.contentOffset
                 offset?.y = (value! - CGFloat(minValue)) / CGFloat(minScale) * CGFloat(minScaleWidth)
                 scrollview?.contentOffset = offset!
@@ -78,7 +100,7 @@ class XBSwiftRuleView: UIView ,UIScrollViewDelegate {
         }
         
         get{
-            if ruleType == XBSwiftRuleType.Vertical {
+            if ruleType == XBSwiftRuleType.vertical {
                 return ((scrollview?.contentOffset.y)! / minScaleWidth) * CGFloat(minScale) + CGFloat(minValue)
             }else{
                 return ((scrollview?.contentOffset.x)! / minScaleWidth) * CGFloat(minScale) + CGFloat(minValue)
@@ -116,7 +138,7 @@ class XBSwiftRuleView: UIView ,UIScrollViewDelegate {
         
         var contentViewFrame : CGRect
         
-        if ruleType == XBSwiftRuleType.Vertical {
+        if ruleType == XBSwiftRuleType.vertical {
             contentViewWidth = CGFloat(maxValue - minValue) / minScale * minScaleWidth + self.bounds.size.height
             contentViewFrame = CGRect(x:0, y:0, width:self.frame.size.width, height:contentViewWidth)
             scrollview?.contentSize = CGSize(width:self.bounds.size.width, height:contentViewWidth)
@@ -127,20 +149,26 @@ class XBSwiftRuleView: UIView ,UIScrollViewDelegate {
             scrollview?.contentSize = CGSize(width:contentViewWidth, height:self.bounds.size.height)
         }
         
-        let contentView = XBSwiftRuleContentView.init(frame: contentViewFrame, minScale: minScale, minScaleWidth: minScaleWidth, minValue: CGFloat(minValue), maxValue: CGFloat(maxValue), startIndex: ruleType == XBSwiftRuleType.Vertical ? self.bounds.size.height/2.0 : self.bounds.size.width/2.0, shortSymbolColor: shortSymbolColor, middleSymbolColor: middleSymbolColor, longSymbolColor: longSymbolColor, shortSymbolHeight: shortSymbolHeight, middleSymbolHeight: middleSymbolHeight, longSymbolHeight: longSymbolHeight, textColor:textColor, textFont:textFont, ruleType:ruleType)
+        let contentView = XBSwiftRuleContentView.init(frame: contentViewFrame, minScale: minScale, minScaleWidth: minScaleWidth, minValue: CGFloat(minValue), maxValue: CGFloat(maxValue), startIndex: ruleType == XBSwiftRuleType.vertical ? self.bounds.size.height/2.0 : self.bounds.size.width/2.0, shortSymbolColor: shortSymbolColor, middleSymbolColor: middleSymbolColor, longSymbolColor: longSymbolColor, shortSymbolHeight: shortSymbolHeight, middleSymbolHeight: middleSymbolHeight, longSymbolHeight: longSymbolHeight, textColor:textColor, textFont:textFont, ruleType:ruleType)
         
         scrollview?.addSubview(contentView)
     }
     
-    override func forwardingTarget(for aSelector: Selector!) -> Any? {
-        if (delegate?.responds(to: aSelector))! {
-            return delegate
-        }
-        return super.forwardingTarget(for: aSelector)
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        targetContentOffset.pointee = scrollToOffset(starting: targetContentOffset.pointee)
     }
     
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    
+    func scrollToOffset(starting:CGPoint) -> CGPoint {
+        var ending = starting
         
+        if ruleType == XBSwiftRuleType.vertical {
+            ending.y = CGFloat(roundf(Float(starting.y / minScaleWidth))) * minScaleWidth
+        }else{
+            ending.x = CGFloat(roundf(Float(starting.x / minScaleWidth))) * minScaleWidth;
+        }
+        
+        return ending;
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -203,7 +231,7 @@ class XBSwiftRuleContentView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        if ruleType == XBSwiftRuleType.Horizontal {
+        if ruleType == XBSwiftRuleType.horizontal {
             drawSubviewsWhenHorizontal(rect: rect)
         }else{
             drawSubviewsWhenVertical(rect: rect)
