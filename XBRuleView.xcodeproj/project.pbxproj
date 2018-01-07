@@ -18,6 +18,7 @@
 		E6D3624B1DC647BF00C38756 /* XBRuleViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D3624A1DC647BF00C38756 /* XBRuleViewUITests.m */; };
 		E6D3625A1DC6499F00C38756 /* XBRuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D362591DC6499F00C38756 /* XBRuleView.m */; };
 		E6D3625D1DC649C300C38756 /* XBRuleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D3625C1DC649C300C38756 /* XBRuleContentView.m */; };
+		ED1267E12002121A00FB108B /* SwiftTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1267E02002121A00FB108B /* SwiftTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		E6D362591DC6499F00C38756 /* XBRuleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBRuleView.m; sourceTree = "<group>"; };
 		E6D3625B1DC649C300C38756 /* XBRuleContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBRuleContentView.h; sourceTree = "<group>"; };
 		E6D3625C1DC649C300C38756 /* XBRuleContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBRuleContentView.m; sourceTree = "<group>"; };
+		ED1267E02002121A00FB108B /* SwiftTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				E6AF41C61DC8FBC400EE38EB /* XBSwiftRuleView.swift */,
+				ED1267E02002121A00FB108B /* SwiftTestView.swift */,
 				E6AF41C51DC8FBC300EE38EB /* XBRuleView-Bridging-Header.h */,
 			);
 			name = SwiftRuleView;
@@ -238,7 +241,7 @@
 				TargetAttributes = {
 					E6D362211DC647BF00C38756 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = VKU2TSZ7H9;
+						DevelopmentTeam = 99EU52649V;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6D3625A1DC6499F00C38756 /* XBRuleView.m in Sources */,
+				ED1267E12002121A00FB108B /* SwiftTestView.swift in Sources */,
 				E6D3622D1DC647BF00C38756 /* ViewController.m in Sources */,
 				E6D3625D1DC649C300C38756 /* XBRuleContentView.m in Sources */,
 				E6D3622A1DC647BF00C38756 /* AppDelegate.m in Sources */,
@@ -460,7 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VKU2TSZ7H9;
+				DEVELOPMENT_TEAM = 99EU52649V;
 				INFOPLIST_FILE = XBRuleView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shaoxiandui.XBRuleView;
@@ -477,7 +481,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VKU2TSZ7H9;
+				DEVELOPMENT_TEAM = 99EU52649V;
 				INFOPLIST_FILE = XBRuleView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shaoxiandui.XBRuleView;
