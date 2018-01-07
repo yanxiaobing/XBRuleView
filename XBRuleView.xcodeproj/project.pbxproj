@@ -104,8 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				E6AF41C61DC8FBC400EE38EB /* XBSwiftRuleView.swift */,
-				ED1267E02002121A00FB108B /* SwiftTestView.swift */,
-				E6AF41C51DC8FBC300EE38EB /* XBRuleView-Bridging-Header.h */,
 			);
 			name = SwiftRuleView;
 			sourceTree = "<group>";
@@ -139,6 +137,8 @@
 				E6AF41C31DC8FB4100EE38EB /* OCRuleView */,
 				E6D3622B1DC647BF00C38756 /* ViewController.h */,
 				E6D3622C1DC647BF00C38756 /* ViewController.m */,
+				ED1267E02002121A00FB108B /* SwiftTestView.swift */,
+				E6AF41C51DC8FBC300EE38EB /* XBRuleView-Bridging-Header.h */,
 				E6D3622E1DC647BF00C38756 /* Main.storyboard */,
 				E6D362311DC647BF00C38756 /* Assets.xcassets */,
 				E6D362331DC647BF00C38756 /* LaunchScreen.storyboard */,

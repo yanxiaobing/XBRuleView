@@ -27,14 +27,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    ruleView = [[XBRuleView alloc]initWithFrame:CGRectMake(50, 200, [UIScreen mainScreen].bounds.size.width - 100, 70)];
+    ruleView = [[XBRuleView alloc]initWithFrame:CGRectMake(50, 100, [UIScreen mainScreen].bounds.size.width - 100, 70)];
     ruleView.delegate = self;
     ruleView.backgroundColor = [UIColor yellowColor];
     
     ruleView.shortSymbolColor = [UIColor redColor];
     ruleView.middleSymbolColor = [UIColor whiteColor];
     ruleView.longSymbolColor = [UIColor blueColor];
-    ruleView.textColor = [UIColor whiteColor];
+    ruleView.textColor = [UIColor blackColor];
     ruleView.textFont = [UIFont systemFontOfSize:20];
     ruleView.longSymbolHeight = 40;
     
@@ -48,10 +48,7 @@
     [self.view addSubview:view];
     
     
-    
-    
-    
-    ruleView2 = [[XBRuleView alloc]initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - 70)/2.0, 400, 70, 150) ruleType:XBRuleTypeVertical];
+    ruleView2 = [[XBRuleView alloc]initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - 70)/2.0, 280, 70, 150) ruleType:XBRuleTypeVertical];
     ruleView2.delegate = self;
     ruleView2.backgroundColor = [UIColor yellowColor];
     [ruleView2 setRangeFrom:20 to:200 minScale:1 minScaleWidth:10];
@@ -64,7 +61,7 @@
     [self.view addSubview:view2];
     
     
-    SwiftTestView *xbRuleView = [[SwiftTestView alloc]initWithFrame:CGRectMake(50, 580, [UIScreen mainScreen].bounds.size.width - 100, 70)];
+    SwiftTestView *xbRuleView = [[SwiftTestView alloc]initWithFrame:CGRectMake(50, 500, [UIScreen mainScreen].bounds.size.width - 100, 70)];
     xbRuleView.backgroundColor = [UIColor redColor];
     [self.view addSubview:xbRuleView];
     
